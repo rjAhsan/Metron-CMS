@@ -43,10 +43,9 @@ Route::get('/certefication', function () {
     return view('Metron.certefication');
 });
 
-Route::get('/contact', function () {
+Route::get('/c', function () {
     return view('Metron.contact');
 });
-
 
 
 
