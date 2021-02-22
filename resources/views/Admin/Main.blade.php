@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
       @yield('title')
+   
   </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -29,7 +30,9 @@
   <link rel="stylesheet" href="{{url('adminpages/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{url('adminpages/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
-
+  
+ 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -41,11 +44,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
+
+
 <div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="#" class="logo">
+    <a href="{{url('/dashboard')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>M</b>F</span>
       <!-- logo for regular state and mobile devices -->
@@ -120,7 +126,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{url('logout')}}" class="btn btn-danger btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -154,89 +160,52 @@
       <ul class="sidebar-menu" data-widget="tree">
 
       <li>
-          <a href="{{url('/logo')}}">
+          <a href="{{url('admin/logo')}}">
             <i class="fa fa-check-circle"></i> <span>LOGO</span>
             
           </a>
         </li>
 
-        
-        <li class="treeview">
-          <a href="{{url('/logo')}}">
-            <i class="fa  fa-check-circle"></i>
-            <span><b>LOGO</b></span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li>
+          <a href="{{url('admin/header')}}">
+            <i class="fa fa-check-circle"></i> <span>TOP HEADER</span>
+            
           </a>
-          
-        </li>
-        <li class="treeview">
-          <a href="{{url('/header')}}">
-            <i class="fa fa-clone"></i>
-            <span><b>TOP HEADER</b></span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          
-        </li>
-        <li class="treeview">
-          <a href="{{url('/slider')}}">
-            <i class="fa fa-exchange"></i>
-            <span><b>SLIDER</b></span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          
         </li>
 
-
-        
+        <li>
+          <a href="{{url('admin/slider')}}">
+            <i class="fa fa-exchange"></i> <span>SLIDER</span>
+            
+          </a>
+        </li>
 
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span ><b>PAGES</b></span>
+            <span ><b>PAGES CMS</b></span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{url('/homepage')}}"><i class="fa fa-home"></i> HOME</a></li>
-            <li><a href="{{url('/About')}}"><i class="fa fa-child"></i> ABOUT</a></li>
-            <li><a href="{{url('/services')}}"><i class="fa fa-cogs"></i> SERVICES</a></li>
-            <li><a href="{{url('/projects')}}"><i class="fa  fa-folder"></i> PROJECTS</a></li>
-            <li><a href="{{url('/gallery')}}"><i class="fa  fa-file-image-o"></i> GALLERY</a></li>
-            <li><a href="{{url('/certification')}}"><i class="fa fa-file-pdf-o"></i> CERTIFICATION</a></li>
-            <li><a href="{{url('/contact')}}"><i class="fa  fa-phone-square"></i> CONTACT US </a></li>
+            <li><a href="{{url('admin/homepage')}}"><i class="fa fa-home"></i> HOME</a></li>
+            <li><a href="{{url('admin/services')}}"><i class="fa fa-cogs"></i> SERVICES</a></li>
+            <li><a href="{{url('admin/About')}}"><i class="fa fa-child"></i> ABOUT</a></li>
+            <li><a href="{{url('admin/projects')}}"><i class="fa  fa-folder"></i> PROJECTS</a></li>
+            <li><a href="{{url('admin/gallery')}}"><i class="fa  fa-file-image-o"></i> GALLERY</a></li>
+            <li><a href="{{url('admin/certification')}}"><i class="fa fa-file-pdf-o"></i> CERTIFICATION</a></li>
+            <li><a href="{{url('admin/contact')}}"><i class="fa  fa-phone-square"></i> CONTACT US </a></li>
           
           </ul>
         </li>
 
-        <!-- <li class="treeview">
-          <a href="#">
-            <i class="fa fa-laptop"></i>
-            <span><b></b>UI Elements</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-          </ul>
-        </li> -->
+        <li><a href="{{url('/admin/catageroy')}}"><i class="fa fa-circle"></i> <span>CATAGEROY</span></a></li>
+        <li><a href="{{url('/admin/clients')}}"><i class="fa fa-child"></i> <span>CLIENTS</span></a></li>
+        <li><a href="#"><i class="fa fa-file-photo-o (alias)"></i> <span>PAGES STATUS</span></a></li>
+        <li><a href="{{url('/admin/seo')}}"><i class="fa  fa-search-minus"></i> <span>SEO</span></a></li>
         
-        
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-    
-
+        <li><a href="{{asset('adminpages/Documentation.pdf')}}"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
 
       </ul>
     </section>

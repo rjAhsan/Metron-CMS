@@ -2,6 +2,35 @@
 @section('title')
  Metron | Services
 @endsection
+
+@section('topheader')
+@isset($data)
+
+<li><a href="#"><span class="icon fa fa-home"></span>{{$data->Address}}</a></li>
+<li><a href="#"><span class="icon fa fa-envelope"></span>{{$data->phone}}</a></li> -->
+@endisset
+
+
+@empty($data)
+
+<li><a href="#"><span class="icon fa fa-home"></span>NO DATA FOUND PLEASE INSERT DATA</a></li>
+<li><a href="#"><span class="icon fa fa-envelope"></span>PLEASE INSERT DATA</a></li> -->
+@endempty
+        
+@endsection
+@section('logo')
+@isset($data2)
+
+<a href="#"><img src="{{ asset($data2->logoimage) }}" alt="{{$data2->logoname}}"></a>
+@endisset
+
+@empty($data2)
+
+<a href="#"><img src="" alt="DATA NOT FOUND"></a>
+@endempty
+
+@endsection
+
 @section('content')
 
 
@@ -13,7 +42,7 @@
                 </div>
                 <div class="pull-right">
                     <ul class="page-breadcrumb">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Services</li>
                     </ul>
                 </div>
@@ -33,113 +62,50 @@
             <div class="three-item-carousel owl-carousel owl-theme">
             	
                 <!--Services Block-->
+                @isset($data3)
+                @foreach($data3 as $data)
                 <div class="services-block">
                 	<div class="inner-box">
                     	<div class="image">
-                        	<a href="#"><img src="{{url('Metron/images/resource/services-1.jpg')}}" alt=""></a>
+                        	<a href="#"><img src="{{asset($data->img)}}" alt="{{$data->title}}"></a>
                         </div>
                         <div class="lower-content">
                         	<div class="upper-box">
                             	<div class="icon-box">
                                 	<span class="icon flaticon-drawing"></span>
                                 </div>
-                                <h3><a href="services-details.html">Building Construction</a></h3>
+                                <h3><a href="#">{{$data->title}}</a></h3>
                             </div>
-                            <div class="text">Our design professionals are equipped to help you determine the products and design that work best for our customers within the colors..</div>
+                            <div class="text">
+                            {{$data->description}}
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+                @endforeach
+                @endisset
+
                 <!--Services Block-->
+                @empty($data3)
                 <div class="services-block">
                 	<div class="inner-box">
                     	<div class="image">
-                        	<a href="#"><img src="{{url('Metron/images/resource/services-2.jpg')}}" alt="" /></a>
+                        	<a href="#"><img src="" alt="DATA NOT FOUND" /></a>
                         </div>
                         <div class="lower-content">
                         	<div class="upper-box">
                             	<div class="icon-box">
                                 	<span class="icon flaticon-drawing"></span>
                                 </div>
-                                <h3><a href="services-details.html">Electrical works</a></h3>
+                                <h3><a href="#">DATA NOT FOUND</a></h3>
                             </div>
-                            <div class="text">Our design professionals are equipped to help you determine the products and design that work best for our customers within the colors..</div>
+                            <div class="text">
+                            DATA NOT FOUND
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!--Services Block-->
-                <div class="services-block">
-                	<div class="inner-box">
-                    	<div class="image">
-                        	<a href="#"><img src="{{url('Metron/images/resource/services-3.jpg')}}" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                        	<div class="upper-box">
-                            	<div class="icon-box">
-                                	<span class="icon flaticon-drawing"></span>
-                                </div>
-                                <h3><a href="services-details.htmll">Fire Fighting Works</a></h3>
-                            </div>
-                            <div class="text">Our design professionals are equipped to help you determine the products and design that work best for our customers within the colors..</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--Services Block-->
-                <div class="services-block">
-                	<div class="inner-box">
-                    	<div class="image">
-                        	<a href="#"><img src="{{url('Metron/images/resource/services-8.jpg')}}" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                        	<div class="upper-box">
-                            	<div class="icon-box">
-                                	<span class="icon flaticon-drawing"></span>
-                                </div>
-                                <h3><a href="services-details.html">DAB Pumps Installation</a></h3>
-                            </div>
-                            <div class="text">Our design professionals are equipped to help you determine the products and design that work best for our customers within the colors..</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--Services Block-->
-                <div class="services-block">
-                	<div class="inner-box">
-                    	<div class="image">
-                        	<a href="#"><img src="{{url('Metron/images/resource/services-9.jpg')}}" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                        	<div class="upper-box">
-                            	<div class="icon-box">
-                                	<span class="icon flaticon-drawing"></span>
-                                </div>
-                                <h3><a href="services-details.html">Water Transfer Pumps</a></h3>
-                            </div>
-                            <div class="text">Our design professionals are equipped to help you determine the products and design that work best for our customers within the colors..</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--Services Block-->
-                <div class="services-block">
-                	<div class="inner-box">
-                    	<div class="image">
-                        	<a href="#"><img src="{{url('Metron/images/resource/services-10.jpg')}}" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                        	<div class="upper-box">
-                            	<div class="icon-box">
-                                	<span class="icon flaticon-drawing"></span>
-                                </div>
-                                <h3><a href="services-details.html">Power Plant installations</a></h3>
-                            </div>
-                            <div class="text">Our design professionals are equipped to help you determine the products and design that work best for our customers within the colors..</div>
-                        </div>
-                    </div>
-                </div>
-                
+                @endempty
             </div>
         </div>
     </section>

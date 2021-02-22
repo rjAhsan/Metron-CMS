@@ -53,8 +53,8 @@
                     <!--Top Left-->
                     <div class="top-left">
                     	<ul class="links clearfix">
-                        	<li><a href="#"><span class="icon fa fa-home"></span>333-B Iqbal Evenue Society Near Shaukhat Khanam Square Khyaban-E-Jinnah Road Lahore</a></li>
-                            <li><a href="#"><span class="icon fa fa-envelope"></span>Into@Metronintl.Com</a></li>
+                        @yield('topheader')
+                        	
                         </ul>
                     </div>
                     
@@ -84,7 +84,10 @@
             	<div class="outer-container clearfix">
                     <!--Logo Box-->
                     <div class="logo-box">
-                        <div class="logo"><a href="index.html"><img src="{{url('Metron/images/loogo.png')}}" alt=""></a></div>
+                        <div class="logo">
+                        @yield('logo')
+                        
+                        </div>
                     </div>
                     
                     <!--Nav Outer-->
@@ -109,7 +112,7 @@
                                     <li class="dropdown"><a href="{{url('projects')}}">Projects</a></li>
                                     <li class="dropdown"><a href="{{url('gallery')}}">Gallery</a> </li>
                                     <li class="dropdown"><a href="{{url('certefication')}}">Certification</a> </li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="{{url('contactus')}}">Contact us</a></li>
                                  </ul>
                             </div>
                         </nav>
@@ -149,7 +152,7 @@
                                     <li class="dropdown"><a href="{{url('projects')}}">Projects</a></li>
                                     <li class="dropdown"><a href="{{url('gallery')}}">Gallery</a> </li>
                                     <li class="dropdown"><a href="{{url('certefication')}}">Certification</a> </li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="{{url('contactus')}}">Contact us</a></li>
                             </ul>
                         </div>
                     </nav><!-- Main Menu End-->

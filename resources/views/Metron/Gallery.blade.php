@@ -202,6 +202,7 @@ Metron | Gallery
 @endsection
 
 @section('scripts')
+<script src="{{url('Metron/js/jquery.js')}}"></script> 
 <script src="{{url('Metron/js/script.js')}}"></script>
 
 @endsectionv

@@ -2,6 +2,47 @@
 @section('title')
  Metron | Certefication
 @endsection
+
+@section('topheader')
+@isset($data)
+
+<li><a href="#"><span class="icon fa fa-home"></span>{{$data->Address}}</a></li>
+<li><a href="#"><span class="icon fa fa-envelope"></span>{{$data->phone}}</a></li> -->
+@endisset
+
+
+@empty($data)
+
+<li><a href="#"><span class="icon fa fa-home"></span>NO DATA FOUND PLEASE INSERT DATA</a></li>
+<li><a href="#"><span class="icon fa fa-envelope"></span>PLEASE INSERT DATA</a></li> -->
+@endempty
+        
+@endsection
+@section('logo')
+@isset($data2)
+
+<a href="#"><img src="{{ asset($data2->logoimage) }}" alt="{{$data2->logoname}}"></a>
+@endisset
+
+@empty($data2)
+
+<a href="#"><img src="" alt="DATA NOT FOUND"></a>
+@endempty
+
+@endsection
+@section('logo')
+@isset($data2)
+
+<a href="#"><img src="{{ asset($data2->logoimage) }}" alt="{{$data2->logoname}}"></a>
+@endisset
+
+@empty($data2)
+
+<a href="#"><img src="" alt="DATA NOT FOUND"></a>
+@endempty
+
+@endsection
+
 @section('content')
 
 
@@ -13,7 +54,7 @@
                 </div>
                 <div class="pull-right">
                     <ul class="page-breadcrumb">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Cartification</li>
                     </ul>
                 </div>
@@ -34,37 +75,23 @@
                 <br>
                 <h1 class="crtficate">Cartificates</h1>
                 <br>
+                @isset($data3)
+                @foreach($data3 as $data)
                 <div class="col-md-4 col-sm-6">
                     <div class="thumbnail">
-                        <img src="{{url('Metron/images/cartification/cartificate1.png')}}" alt="" class="img-responsive">
+                        <img src="{{asset($data->img)}}" alt="{{$data->name}}" class="img-responsive">
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="thumbnail">
-                            <img src="Metron/images/cartification/cartificate2.png" alt="" class="img-responsive">
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="thumbnail">
-                            <img src="Metron/images/cartification/cartificate3.png" alt="" class="img-responsive">
-                    </div>
-                   
-                </div>
-                <div class="col-md-4 col-sm-6">
-                        <div class="thumbnail">
-                            <img src="Metron/images/cartification/cartificate4.png" alt="" class="img-responsive">
-                        </div>
-                    </div>
+                </div>  
+                @endforeach
+                @endisset
+
+                @empty($data3)
                     <div class="col-md-4 col-sm-6">
                         <div class="thumbnail">
-                                <img src="Metron/images/cartification/cartificate5.png" alt="" class="img-responsive">
+                                <img src="" alt="DATA NOT FOUND" class="img-responsive">
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="thumbnail">
-                                <img src="Metron/images/cartification/cartificate6.png" alt="" class="img-responsive">
-                        </div>
-                    </div>
+                 @endempty   
             </div>
         </div>
     </section>

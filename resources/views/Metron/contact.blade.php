@@ -2,6 +2,9 @@
 @section('title')
  Metron | Contact US
 @endsection
+
+
+
 @section('content')
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.740634511705!2d74.26952711510623!3d31.448806557819054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190171599c4df9%3A0x1e3f7a883cb14aee!2sShaukat+Khanum+Memorial+Cancer+Hospital+and+Research+Centre!5e0!3m2!1sen!2s!4v1566490726966!5m2!1sen!2s" width="100%" height="550px" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -100,6 +103,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{url('Metron/js/script.js')}}"></script>
+<script src="{{url('Metron/js/jquery.js')}}"></script> 
+<script src="{{url('Metron/js/script.js')}}"></script>v
 
 @endsectionv

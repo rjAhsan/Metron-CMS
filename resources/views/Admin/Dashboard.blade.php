@@ -10,7 +10,7 @@ Admin Dashboard
 @endsection
 
 @section('content')
-
+@include('sweet::alert')
 <section class="content">
 
       <!-- Small boxes (Stat box) -->
@@ -19,14 +19,14 @@ Admin Dashboard
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>{{$data2}}</h3>
 
-              <p>New Orders</p>
+              <p>NO. PROJECTS</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+         
           </div>
         </div>
         <!-- ./col -->
@@ -34,14 +34,14 @@ Admin Dashboard
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{$data3}}<sup style="font-size: 20px"></sup></h3>
 
-              <p>Bounce Rate</p>
+              <p> SERVICES</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          
           </div>
         </div>
         <!-- ./col -->
@@ -49,14 +49,15 @@ Admin Dashboard
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3>{{$data4}}</h3>
 
-              <p>User Registrations</p>
+              <p>Certiification</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
+          
           </div>
         </div>
         <!-- ./col -->
@@ -64,14 +65,13 @@ Admin Dashboard
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3>{{$data1}}</h3>
 
-              <p>Unique Visitors</p>
+              <p>NO. Clients</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
